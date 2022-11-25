@@ -23,9 +23,9 @@
 ### Association
 
 - belongs_to :user
-- has_many :memories
+- has_many :records
 
-## memories テーブル
+## records テーブル
 
 | Column                 | Type         | Options                        |
 | ---------------------- | ------------ | ------------------------------ |
