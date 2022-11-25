@@ -34,8 +34,6 @@ a {
   color: #3b4043;
 }
 
-/* ヘッダー */
-
 .header {
   background-color: #63f990cb ;
   padding: 10px 0;
@@ -72,4 +70,16 @@ a {
   border: 1px #ff0000 solid;
   border-radius: 3px;
   transition: 0.4s ease;
+}
+
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
 }
