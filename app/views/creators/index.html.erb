@@ -5,7 +5,7 @@
   <ul class='item-lists'>
   <% @creators.each do |creator| %>
     <li class='list'>
-      <%#= link_to creator_path(creator.id) do %>
+      <%= link_to creator_path(creator.id) do %>
       <div class='item-img-content'>
         <%= image_tag creator.image, class: "item-img" %>
       </div>
@@ -16,5 +16,6 @@
       </div>
       <% end %>
     </li>
-   </ul> 
+  <% end %>
+  </ul> 
 </div>

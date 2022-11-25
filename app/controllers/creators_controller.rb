@@ -15,6 +15,11 @@ class CreatorsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @creator = Creator.find(params[:id])
+  end
+
 end
 
 private
