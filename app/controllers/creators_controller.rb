@@ -18,6 +18,7 @@ class CreatorsController < ApplicationController
 
   def show
     @creator = Creator.find(params[:id])
+    @records = @creator.records.includes(:creator)
   end
 
 end

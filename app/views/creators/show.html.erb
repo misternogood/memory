@@ -1,8 +1,22 @@
 <div class='item-contents'>
+ <%= link_to "新規投稿", new_creator_record_path(@creator.id), class: :nav__btn %>
   <div class="subtitle" >
     思い出一覧
   </div>
   <ul class='item-lists'>
-   <%# 思い出投稿機能実装後思い出一覧をここに表示 %>
+   <% @records.each do |record| %>
+    <li class='list'>
+      <%= link_to "#" do %>
+      <div class='item-img-content'>
+        <%= image_tag record.image, class: "item-img" %>
+      </div>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= record.title %>
+        </h3>
+      </div>
+      <% end %>
+    </li>
+  <% end %>
   </ul> 
 </div>
