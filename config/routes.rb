@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :creators, only: [:index, :new, :create, :show] do
     resources :records, only: [:new, :create]
   end
+  resources :users, only: :show
 end

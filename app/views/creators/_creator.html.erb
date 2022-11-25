@@ -1,0 +1,12 @@
+<li class='list'>
+  <%= link_to creator_path(creator.id) do %>
+  <div class='item-img-content'>
+    <%= image_tag creator.image, class: "item-img" %>
+  </div>
+  <div class='item-info'>
+    <h3 class='item-name'>
+      <%= creator.name %>
+    </h3>
+  </div>
+  <% end %>
+</li>
