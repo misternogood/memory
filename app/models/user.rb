@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   validates :password, format: { with: VALID_PASSWORD_REGEX } #英数字混合
   validates :nickname, presence: true
+
+  has_many :creators
 end
