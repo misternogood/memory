@@ -1,5 +1,6 @@
 class CreatorsController < ApplicationController
   def index
+    @creators = Creator.order('created_at DESC')
   end
 
   def new
