@@ -35,6 +35,7 @@ a {
 }
 
 .header {
+  width: 100vw;
   background-color: #63f990cb ;
   padding: 10px 0;
   height: 70px;
@@ -86,4 +87,21 @@ a {
 
 .center {
   text-align: center;
+}
+
+.footer {
+  width: 100vw;
+  background-color: #63f990cb ;
+  padding: 10px 0;
+  height: 70px;
+  align-items: center;
+}
+.footer__left {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.main-title {
+  height: 100%;
 }

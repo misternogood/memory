@@ -10,7 +10,7 @@ class CreatorsController < ApplicationController
   def create 
     @creator = Creator.new(creator_params)
     if @creator.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
