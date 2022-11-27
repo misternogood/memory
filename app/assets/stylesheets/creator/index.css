@@ -214,7 +214,6 @@ a {
 /* 商品一覧 */
 
 .item-contents {
-  background-color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,7 +244,6 @@ a {
 .item-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #FFF;
 }
 
 

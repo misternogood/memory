@@ -4,39 +4,17 @@
     <title>Memory</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+    $(window).on("scroll", function(){
+    $("header").css("left", -$(window).scrollLeft());
+    });
+    </script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-   <header class="header">
-        <div class="nav">
-          <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
-          </div>
-
-          <% if user_signed_in? %>
-            <div class="nav__right">
-              <%= link_to "トップ", root_path, class: :nav__btn %>
-              <%= link_to "マイページ", user_path(current_user.id), class: :nav__btn %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
-            </div>
-          <% else %>
-            <div class="nav__right">
-              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-            </div> 
-          <% end %>
-        </div>
-    </header>
     <%= yield %>
-    <footer class="footer">
-        <div class="footer__left">
-          <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
-          </div>
-        </div>
-    </footer>
+    
   </body>
 </html>
