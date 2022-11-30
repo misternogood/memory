@@ -45,7 +45,7 @@
         </div>
         <div class="sell-btn-contents">
           <%= f.submit "登録する" ,class:"sell-btn" %>
-          <%=link_to 'もどる', root_path, class:"back-btn" %>
+          <%=link_to 'もどる', user_path(current_user.id), class:"back-btn" %>
         </div>
       </div>
       <% end %>

@@ -135,3 +135,7 @@ a {
   font-weight: bold;
   text-align: center;
 }
+
+.edit__btn {
+  margin-top: 5px;
+}
