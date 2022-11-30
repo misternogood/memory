@@ -1,11 +1,13 @@
-<div class="main-title" >
-  <div class='item-contents'>
-    <%= link_to "作者登録", new_creator_path, class: :nav__btn %>
-    <div class="subtitle" >
-      作者一覧
+<%= render "shared/header" %>
+  <div class="main-title" >
+    <div class='item-contents'>
+      <%= link_to "作者登録", new_creator_path, class: :nav__btn %>
+      <div class="subtitle" >
+        作者一覧
+      </div>
+      <ul class='item-lists'>
+        <%= render partial: 'creators/creator', collection: @creators %>
+      </ul> 
     </div>
-    <ul class='item-lists'>
-      <%= render partial: 'creators/creator', collection: @creators %>
-    </ul> 
   </div>
-</div>
+<%= render "shared/footer" %>
