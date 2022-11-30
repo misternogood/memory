@@ -115,4 +115,23 @@ a {
 .main-title {
   padding-top: 70px;
   min-height: 100vh;
+  min-width: 850px;
+}
+
+.top-iamge {
+  min-width: 850px;
+}
+
+.image {
+  width: 100%;
+  object-fit: contain;
+}
+
+.top-contents>.subtitle {
+  font-size: 5vh;
+  margin: 2vh 0;
+  text-decoration: none;
+  color: #1900ff;
+  font-weight: bold;
+  text-align: center;
 }
