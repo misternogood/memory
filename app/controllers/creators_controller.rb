@@ -1,4 +1,5 @@
 class CreatorsController < ApplicationController
+  before_action :set_creator, only: [:show, :edit]
   def index
     @creators = Creator.order('created_at DESC')
   end
@@ -17,8 +18,10 @@ class CreatorsController < ApplicationController
   end
 
   def show
-    @creator = Creator.find(params[:id])
     @records = @creator.records.includes(:creator)
+  end
+
+  def edit
   end
 
 end
@@ -28,3 +31,8 @@ private
   def creator_params
     params.require(:creator).permit(:name, :birth_date, :image).merge(user_id: current_user.id)
   end
+
+  def set_creator
+    @creator = Creator.find(params[:id])
+  end
+end
