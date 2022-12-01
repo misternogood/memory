@@ -1,5 +1,5 @@
 class CreatorsController < ApplicationController
-  before_action :set_creator, only: [:show, :edit]
+  before_action :set_creator, only: [:show, :edit, :update]
   def index
     @creators = Creator.order('created_at DESC')
   end
@@ -24,6 +24,13 @@ class CreatorsController < ApplicationController
   def edit
   end
 
+  def update
+    if @creator.update(creator_params)
+      redirect_to user_path(current_user.id)
+    else
+      render :new
+    end
+  end
 end
 
 private
