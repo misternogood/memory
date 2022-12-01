@@ -1,4 +1,5 @@
 class RecordsController < ApplicationController
+  before_action :authenticate_user!, except: :index
   before_action :set_record, only: [:show, :edit, :update, :destroy]
   def new
     @record = Record.new
@@ -34,14 +35,15 @@ class RecordsController < ApplicationController
       render :show
     end
   end
-end
 
-private
 
-def record_params
-  params.require(:record).permit(:title, :content, :image).merge(creator_id: params[:creator_id])
-end
+  private
 
-def set_record
-  @record = Record.find(params[:id])
+  def record_params
+    params.require(:record).permit(:title, :content, :image).merge(creator_id: params[:creator_id])
+  end
+
+  def set_record
+    @record = Record.find(params[:id])
+  end
 end

@@ -1,5 +1,5 @@
 class Creator < ApplicationRecord
-  validates :name, :birth_date, presence: true
+  validates :name, :birth_date, :image, presence: true
 
   belongs_to :user
   has_many :records, dependent: :destroy
