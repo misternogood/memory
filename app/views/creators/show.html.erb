@@ -8,7 +8,7 @@
       <ul class='item-lists'>
       <% @records.each do |record| %>
         <li class='list'>
-          <%= link_to "#" do %>
+          <%= link_to creator_record_path(@creator.id,record.id) do %>
           <div class='item-img-content'>
             <%= image_tag record.image, class: "item-img" %>
           </div>
