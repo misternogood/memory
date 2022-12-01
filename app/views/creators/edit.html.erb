@@ -2,8 +2,8 @@
   <div class="main-title" >
     <div class="items-sell-contents">
       <div class="items-sell-main">
-        <h2 class="items-sell-title">作者の情報を入力</h2>
-        <%= form_with model: @creator, url:creators_path, local: true do |f| %>
+        <h2 class="items-sell-title">作者の情報を編集</h2>
+        <%= form_with model: @creator, local: true do |f| %>
 
         <%= render 'shared/error_messages', model: f.object %>
 
@@ -44,7 +44,7 @@
                       "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
         </div>
         <div class="sell-btn-contents">
-          <%= f.submit "登録する" ,class:"sell-btn" %>
+          <%= f.submit "変更する" ,class:"sell-btn" %>
           <%=link_to 'もどる', user_path(current_user.id), class:"back-btn" %>
         </div>
       </div>
