@@ -1,4 +1,5 @@
 class RecordsController < ApplicationController
+  before_action :set_record, only: [:show, :edit, :update]
   def new
     @record = Record.new
   end
@@ -13,7 +14,17 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @record.update(record_params)
+      redirect_to creator_record_path(@record.id)
+    else
+      render :edit
+    end
   end
 end
 
@@ -21,4 +32,8 @@ private
 
 def record_params
   params.require(:record).permit(:title, :content, :image).merge(creator_id: params[:creator_id])
+end
+
+def set_record
+  @record = Record.find(params[:id])
 end
