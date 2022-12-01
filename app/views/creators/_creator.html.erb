@@ -8,7 +8,7 @@
       <%= creator.name %>
     </h3>
     <div class="edit__btn">
-    <%= link_to "編集", edit_creator_path, method: :get, class: :nav__btn  %>
+    <%= link_to "編集", edit_creator_path(creator.id), method: :get, class: :nav__btn  %>
     </div>
   </div>
   <% end %>

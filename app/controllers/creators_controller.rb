@@ -35,4 +35,3 @@ private
   def set_creator
     @creator = Creator.find(params[:id])
   end
-end
