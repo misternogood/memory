@@ -11,6 +11,10 @@ class RecordsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @record = Record.find(params[:id])
+  end
 end
 
 private
