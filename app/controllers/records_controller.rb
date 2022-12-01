@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :set_record, only: [:show, :edit, :update]
+  before_action :set_record, only: [:show, :edit, :update, :destroy]
   def new
     @record = Record.new
   end
@@ -24,6 +24,14 @@ class RecordsController < ApplicationController
       redirect_to creator_record_path(@record.id)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @record.destroy
+      redirect_to creator_path(@record.creator.id) 
+    else
+      render :show
     end
   end
 end
