@@ -18,7 +18,7 @@ class RecordsController < ApplicationController
   end
 
   def edit
-
+  end
 end
 
 private
@@ -27,6 +27,6 @@ def record_params
   params.require(:record).permit(:title, :content, :image).merge(creator_id: params[:creator_id])
 end
 
-def set_creator
+def set_record
   @record = Record.find(params[:id])
 end
