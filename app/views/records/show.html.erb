@@ -13,7 +13,7 @@
     </div>
     <div class="edit__btn">
     <%= link_to "編集", edit_creator_record_path(@record.creator_id,@record.id), method: :get, class: :nav__btn  %>
-    <%= link_to "削除", "#", method: :delete, class: :nav__btn %>
+    <%= link_to "削除", creator_record_path(@record.creator_id,@record.id), method: :delete, class: :nav__btn %>
     </div>
   </div>
 </div>
