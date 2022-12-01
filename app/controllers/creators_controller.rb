@@ -28,7 +28,7 @@ class CreatorsController < ApplicationController
     if @creator.update(creator_params)
       redirect_to user_path(current_user.id)
     else
-      render :new
+      render :edit
     end
   end
 end
