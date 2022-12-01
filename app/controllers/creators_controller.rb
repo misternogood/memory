@@ -20,7 +20,7 @@ class CreatorsController < ApplicationController
   end
 
   def show
-    @records = @creator.records.includes(:creator)
+    @records = @creator.records.includes(:creator).order('created_at DESC')
   end
 
   def edit
