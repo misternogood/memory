@@ -3,7 +3,7 @@
     <div class='item-contents'>
     <%= link_to "新規投稿", new_creator_record_path(@creator.id), class: :nav__btn %>
       <div class="subtitle" >
-        思い出一覧
+        <%= "#{@creator.name}さんの思い出一覧" %>
       </div>
       <ul class='item-lists'>
       <% @records.each do |record| %>
