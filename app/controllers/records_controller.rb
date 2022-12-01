@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :set_record, only: [:show, :edit]
+  before_action :set_record, only: [:show, :edit, :update]
   def new
     @record = Record.new
   end
@@ -17,6 +17,14 @@ class RecordsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @record.update(record_params)
+      redirect_to creator_record_path(@record.id)
+    else
+      render :edit
+    end
   end
 end
 
