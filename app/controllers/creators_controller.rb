@@ -42,7 +42,6 @@ class CreatorsController < ApplicationController
     end
   end
 
-
   private
 
   def creator_params
@@ -54,6 +53,6 @@ class CreatorsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path if @creator.user_id != current_user.id 
+    redirect_to root_path if @creator.user_id != current_user.id
   end
 end

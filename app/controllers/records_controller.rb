@@ -30,12 +30,11 @@ class RecordsController < ApplicationController
 
   def destroy
     if @record.destroy
-      redirect_to creator_path(@record.creator.id) 
+      redirect_to creator_path(@record.creator.id)
     else
       render :show
     end
   end
-
 
   private
 
