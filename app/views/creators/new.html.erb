@@ -3,7 +3,7 @@
     <div class="items-sell-contents">
       <div class="items-sell-main">
         <h2 class="items-sell-title">作者の情報を入力</h2>
-        <%= form_with model: @creator, url:creators_path, local: true do |f| %>
+        <%= form_with model: @creator, url:creators_path, id: 'new_creator', local: true do |f| %>
 
         <%= render 'shared/error_messages', model: f.object %>
 
@@ -11,12 +11,13 @@
           <div class="weight-bold-text">
             作者画像
             <span class="indispensable">必須</span>
+            <div id="previews"></div>
           </div>
           <div class="click-upload">
             <p>
               クリックしてファイルをアップロード
             </p>
-            <%= f.file_field :image, id:"item-image",accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
+            <%= f.file_field :image, id:"item-image", accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
           </div>
         </div>
         <div class="new-items">
