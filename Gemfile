@@ -61,6 +61,7 @@ gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'rmagick'
+gem 'rails-i18n'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :production do
   gem 'pg'
