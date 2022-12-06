@@ -2,7 +2,7 @@
   <div class="items-sell-contents">
     <div class="items-sell-main">
       <h2 class="items-sell-title">投稿の詳細を編集</h2>
-      <%= form_with model:@record,url:creator_record_path(@record.creator_id,@record.id), local: true do |f| %>
+      <%= form_with model:@record,url:creator_record_path(@record.creator_id,@record.id), id: 'new_record', local: true do |f| %>
 
       <%= render 'shared/error_messages', model: f.object %> 
 
@@ -10,6 +10,7 @@
         <div class="weight-bold-text">
           画像
           <span class="indispensable">必須</span>
+          <div id="previews"></div>
         </div>
         <div class="click-upload">
           <p>

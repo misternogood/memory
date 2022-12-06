@@ -3,7 +3,7 @@
     <div class="items-sell-contents">
       <div class="items-sell-main">
         <h2 class="items-sell-title">作者の情報を編集</h2>
-        <%= form_with model: @creator, local: true do |f| %>
+        <%= form_with model: @creator, id: 'new_creator', local: true do |f| %>
 
         <%= render 'shared/error_messages', model: f.object %>
 
@@ -11,6 +11,7 @@
           <div class="weight-bold-text">
             作者画像
             <span class="indispensable">必須</span>
+            <div id="previews"></div>
           </div>
           <div class="click-upload">
             <p>

@@ -352,3 +352,8 @@ a {
   width: 50vw;
   height: 50vh;
 }
+
+.preview-image {
+  margin-top: 5px;
+  height: 50vh;
+}
