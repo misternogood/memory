@@ -17,19 +17,19 @@ RSpec.describe Record, type: :model do
   it 'titleが空では登録できない' do
     @record.title = ''
     @record.valid?
-    expect(@record.errors.full_messages).to include("タイトルを入力してください")
+    expect(@record.errors.full_messages).to include('タイトルを入力してください')
   end
   # 説明
   it 'contentが空では登録できない' do
     @record.content = ''
     @record.valid?
-    expect(@record.errors.full_messages).to include("説明を入力してください")
+    expect(@record.errors.full_messages).to include('説明を入力してください')
   end
   # 画像
   it 'imageが空では登録できない' do
     @record.image = nil
     @record.valid?
-    expect(@record.errors.full_messages).to include("画像を選択してください")
+    expect(@record.errors.full_messages).to include('画像を選択してください')
   end
   # 作者
   it 'creatorが紐づいていなければ登録できない' do
