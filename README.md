@@ -3,7 +3,7 @@ memory ~ 工作物を思い出に ~
 # アプリケーション概要
 お子様が作った作品を写真にして永久保存することで、作品を保管する場所に困らず、かつ思い出として見返すことも可能です。
 # URL
-https://memory-ekqq.onrender.com/
+https://memory-wonu.onrender.com/
 # テスト用アカウント
 ・ Basic認証ID : admin<br>
 ・ Basic認証パスワード : 2222<br>
