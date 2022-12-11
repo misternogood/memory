@@ -58,7 +58,7 @@ test:
 production:
   <<: *default
   database: memory_production
-  username: memory
-  password: <%= ENV['MEMORY_DATABASE_PASSWORD'] %>
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  socket: /var/lib/mysql/mysql.sock
