@@ -1,8 +1,8 @@
 <%= render "shared/header" %>
   <div class="main-title" >
     <div class='item-contents'>
-    <%= link_to "新規投稿", new_creator_record_path(@creator.id), class: :nav__btn %>
-      <div class="subtitle" >
+    <%= link_to "新規投稿", new_creator_record_path(@creator.id), class: :new__btn %>
+      <div class="new-subtitle" >
         <%= "#{@creator.name}さんの思い出一覧" %>
       </div>
       <ul class='item-lists'>
@@ -12,10 +12,10 @@
           <div class='item-img-content'>
             <%= image_tag record.image, class: "item-img" %>
           </div>
-          <div class='item-info'>
-            <h3 class='item-name'>
+          <div class='record-info'>
+            <span class='record-name'>
               <%= record.title %>
-            </h3>
+            </span>
           </div>
           <% end %>
         </li>
