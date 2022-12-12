@@ -39,7 +39,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:title, :content, :image).merge(creator_id: params[:creator_id])
+    params.require(:record).permit(:title, :content, :image, :created_date).merge(creator_id: params[:creator_id])
   end
 
   def set_record
