@@ -71,6 +71,7 @@ a {
 }
 .nav__btn{
   padding: 0.4em 1.6em;
+  margin: 0px 10px;
   font-size: 0.8em;
   color: #ff0000;
   text-decoration: none;
