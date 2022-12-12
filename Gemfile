@@ -69,6 +69,7 @@ gem 'rmagick'
 gem 'rails-i18n'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem "aws-sdk-s3", require: false
+gem 'by_star'
 group :production do
   gem 'unicorn', '5.4.1'
 end
