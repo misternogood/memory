@@ -28,3 +28,13 @@ a {
 .item-name {
   font-size: 3.5vh;
 }
+
+.item-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list {
+  margin: 0px 1vw;
+}
