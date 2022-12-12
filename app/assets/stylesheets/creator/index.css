@@ -14,8 +14,8 @@ a {
 }
 
 .item-img {
-  width: 33vh;
   height: 33vh;
+  max-width: 50vw;
 }
 
 .item-info {
@@ -26,5 +26,18 @@ a {
 }
 
 .item-name {
-  font-size: 3.5vh;
+  font-size: 2vh;
+  border: 1px solid #aaa;
+  padding: 2px;
+}
+
+.item-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list {
+  margin: 0px 1vw;
+  text-align: center;
 }

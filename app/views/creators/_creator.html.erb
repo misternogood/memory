@@ -4,9 +4,9 @@
     <%= image_tag creator.image, class: "item-img" %>
   </div>
   <div class='item-info'>
-    <h3 class='item-name'>
+    <span class='item-name'>
       <%= creator.name %>
-    </h3>
+    </span>
     <div class="edit__btn">
     <%= link_to "編集", edit_creator_path(creator.id), method: :get, class: :nav__btn  %>
     <%= link_to "削除", creator_path(creator.id), method: :delete, class: :nav__btn %>
