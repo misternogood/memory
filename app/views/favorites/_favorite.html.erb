@@ -1,0 +1,11 @@
+<p>
+      <% if record.favorited_by?(current_user) %>
+        <%= link_to creator_record_favorites_path(record.creator_id,record.id), method: :delete, remote: true, class: "favorite_btn" do %>
+          ♥ お気に入り
+        <% end %>
+      <% else %>
+        <%= link_to creator_record_favorites_path(record.creator_id,record.id), method: :post, remote: true, class: "favorite_btn" do %>
+          ♡ お気に入り
+        <% end %>
+      <% end %>
+      </p>
