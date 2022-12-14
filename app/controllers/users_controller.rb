@@ -6,6 +6,13 @@ class UsersController < ApplicationController
     @creators = @user.creators
   end
 
+  def favorites
+    @user = User.find(params[:id])
+    favorites= Favorite.where(user_id: @user.id).order("created_at DESC").pluck(:record_id)
+    @favorite_records = Record.find(favorites)
+    @favorite_records = Kaminari.paginate_array(@favorite_records).page(params[:page]).per(20)
+  end
+
   private
 
   def move_to_index

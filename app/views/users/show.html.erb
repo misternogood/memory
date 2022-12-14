@@ -9,5 +9,8 @@
         <%= render partial: 'creators/creator', collection: @creators %>
       </ul> 
     </div>
+    <div class="subtitle" >
+      <%= link_to "お気に入りした思い出はこちら", favorites_user_path(@user) ,class: :blue %>
+    </div>
   </div>
 <%= render "shared/footer" %>

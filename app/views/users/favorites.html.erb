@@ -1,0 +1,26 @@
+<%= render "shared/header" %>
+  <div class="main-title" >
+    <div class='item-contents'>
+      <div class="new-subtitle" >
+        <%= "#{@user.nickname}さんのお気に入り一覧" %>
+      </div>
+      <ul class='item-lists'>
+      <% @favorite_records.each do |record| %>
+        <li class='list'>
+          <%= link_to creator_record_path(record.creator_id, record.id) do %>
+          <div class='item-img-content'>
+            <%= image_tag record.image, class: "item-img" %>
+          </div>
+          <div class='record-info'>
+            <span class='record-name'>
+              <%= record.title %>
+            </span>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+      </ul> 
+      <%= paginate @favorite_records %>
+    </div>
+  </div>
+<%= render "shared/footer" %>
