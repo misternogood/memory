@@ -3,9 +3,22 @@
 <div class="main-title" >
   <div class='item-contents'>
     <div class='record-title'>タイトル</div>
-    <h2 class="name">
-      <%= @record.title %>
-    </h2>
+    <div class='favorite-title'>
+      <h2 class="name">
+        <%= @record.title %>
+      </h2>
+      <p>
+      <% if @record.favorited_by?(current_user) %>
+        <%= link_to creator_record_favorites_path(@record.creator_id,@record.id), method: :delete, class: "favorite_btn" do %>
+          ♥ お気に入り
+        <% end %>
+      <% else %>
+        <%= link_to creator_record_favorites_path(@record.creator_id,@record.id), method: :post, class: "favorite_btn" do %>
+          ♡ お気に入り
+        <% end %>
+      <% end %>
+      </p>
+    </div>
     <div class="item-img-content">
       <%= image_tag @record.image ,class:"record-item-img" %>
     </div>
