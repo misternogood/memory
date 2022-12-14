@@ -2,7 +2,7 @@
   <div class="items-sell-contents">
     <div class="items-sell-main">
       <h2 class="items-sell-title">投稿の詳細を入力</h2>
-      <%= form_with model: @record, url:creator_records_path, id: 'new_record', local: true do |f| %>
+      <%= form_with model: @record_form, url:creator_records_path, id: 'new_record', local: true do |f| %>
 
       <%= render 'shared/error_messages', model: f.object %>
 
