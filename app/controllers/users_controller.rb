@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def favorites
     @user = User.find(params[:id])
-    favorites= Favorite.where(user_id: @user.id).order("created_at DESC").pluck(:record_id)
+    favorites = Favorite.where(user_id: @user.id).order('created_at DESC').pluck(:record_id)
     @favorite_records = Record.find(favorites)
     @favorite_records = Kaminari.paginate_array(@favorite_records).page(params[:page]).per(20)
   end
