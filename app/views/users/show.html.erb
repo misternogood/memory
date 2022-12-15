@@ -3,14 +3,31 @@
     <div class='item-contents'>
       <%= link_to "作者登録", new_creator_path, class: :new__btn %>
       <div class="subtitle" >
-        <%= "#{@user.nickname}さんの作者一覧" %>
+        <p><%= "#{@user.nickname}さんの作者一覧" %></p>
       </div>
       <ul class='item-lists'>
         <%= render partial: 'creators/creator', collection: @creators %>
       </ul> 
+      <%if @creators.length == 0 %>
+        <li class='list'>
+          <%= link_to new_creator_path do %>
+          <div class='item-img-content'>
+            <%= image_tag "sample.jpeg", class: "sample-img" %>
+            <div class='sample'> 
+              <span>sample</span>
+            </div> 
+          </div>
+          <div class='item-info'>
+            <p class='item-name'>
+              作者を登録してね！
+            </p>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
     </div>
     <div class="subtitle" >
-      <%= link_to "お気に入りした思い出はこちら", favorites_user_path(@user) ,class: :blue %>
+      <p><%= link_to "お気に入りした思い出はこちら", favorites_user_path(@user) ,class: :blue %></p>
     </div>
   </div>
 <%= render "shared/footer" %>
