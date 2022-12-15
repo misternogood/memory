@@ -24,9 +24,8 @@
       <%= paginate @records %>
       <%if @records.length == 0 %>
         <li class='list'>
-          <%= link_to new_creator_record_path(@creator.id) do %>
           <div class='item-img-content'>
-            <%= image_tag("sample_record.JPG", class: "sample-img") %>
+            <%= link_to image_tag("sample_record.JPG", class: "sample-img"), new_creator_record_path(@creator.id) %>
             <div class='sample'> 
               <span>sample</span>
             </div> 
@@ -36,7 +35,6 @@
               思い出を投稿してね！
             </p>
           </div>
-          <% end %>
         </li>
       <% end %>
     </div>

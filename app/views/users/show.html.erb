@@ -8,11 +8,10 @@
       <ul class='item-lists'>
         <%= render partial: 'creators/creator', collection: @creators %>
       </ul> 
-      <%if @creators.length == 0 %>
+      <% if @creators.length == 0 %>
         <li class='list'>
-          <%= link_to new_creator_path do %>
           <div class='item-img-content'>
-            <%= image_tag("sample.jpeg", class: "sample-img") %>
+            <%= link_to image_tag("sample.jpeg", class: "sample-img"), new_creator_path %>
             <div class='sample'> 
               <span>sample</span>
             </div> 
@@ -22,7 +21,6 @@
               作者を登録してね！
             </p>
           </div>
-          <% end %>
         </li>
       <% end %>
     </div>
