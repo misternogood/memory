@@ -21,6 +21,7 @@ class RecordsController < ApplicationController
   def edit
     record_attributes = @record.attributes
     @record_form = RecordForm.new(record_attributes)
+    @record_form.tag_name = @record.tags.first&.tag_name
   end
 
   def update
@@ -45,7 +46,7 @@ class RecordsController < ApplicationController
   private
 
   def record_form_params
-    params.require(:record_form).permit(:title, :content, :image, :created_date).merge(creator_id: params[:creator_id])
+    params.require(:record_form).permit(:title, :content, :tag_name, :image, :created_date).merge(creator_id: params[:creator_id])
   end
 
   def set_record
