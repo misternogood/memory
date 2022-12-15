@@ -124,6 +124,7 @@ a {
 .main-title {
   padding-top: 70px;
   min-height: 100vh;
+  background-color: #f9ff82;
 }
 
 .image {
@@ -167,7 +168,7 @@ a {
   padding: 2px;
   margin-bottom: 20px;
   max-width: 50vw;
-  border: 1px solid rgb(0, 0, 0);
+  border: 2px solid #1900ff;
   text-align: left;
 }
 
@@ -206,7 +207,7 @@ a {
   text-align: center;
   font-weight: bold;
   max-width: 30vw;
-  border: 1px solid #aaa;
+  border: 2px solid #1900ff;
 }
 
 .record-name {
