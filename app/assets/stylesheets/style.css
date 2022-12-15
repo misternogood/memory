@@ -15,6 +15,12 @@ div {
   padding: 0;
 }
 
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
@@ -134,7 +140,7 @@ a {
 
 .new-subtitle {
   color: #1900ff;
-  font-size:  3vw;
+  font-size:  30px;
   margin: 2vh 0;
   text-decoration: none;
   font-weight: bold;
@@ -196,6 +202,7 @@ a {
 }
 
 .item-img-content {
+  position: relative;
   text-align: center;
   margin-top: 5px;
 }
@@ -224,7 +231,7 @@ a {
 }
 
 .subtitle {
-  font-size:  3vw;
+  font-size:  30px;
   margin: 2vh 0;
   text-decoration: none;
   color: #1900ff;
@@ -281,4 +288,22 @@ a {
   border: 1px solid #ccc;
   font-size: 12px;
   resize: none;
+}
+
+.sample {
+  position:absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  transform: skewY(-10deg);
+}
+
+.sample>span {
+  color: #FFF;
+  font-size: 7vh;
+  font: bold;
+}
+
+.sample-img {
+  height: 33vh;
 }

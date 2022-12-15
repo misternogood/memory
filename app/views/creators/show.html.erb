@@ -3,7 +3,7 @@
     <div class='item-contents'>
     <%= link_to "新規投稿", new_creator_record_path(@creator.id), class: :new__btn %>
       <div class="new-subtitle" >
-        <%= "#{@creator.name}さんの思い出一覧" %>
+        <p><%= "#{@creator.name}さんの思い出一覧" %></p>
       </div>
       <ul class='item-lists'>
       <% @records.each do |record| %>
@@ -22,6 +22,23 @@
       <% end %>
       </ul> 
       <%= paginate @records %>
+      <%if @records.length == 0 %>
+        <li class='list'>
+          <%= link_to new_creator_record_path(@creator.id) do %>
+          <div class='item-img-content'>
+            <%= image_tag "sample_record.JPG", class: "sample-img" %>
+            <div class='sample'> 
+              <span>sample</span>
+            </div> 
+          </div>
+          <div class='item-info'>
+            <p class='item-name'>
+              思い出を投稿してね！
+            </p>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
     </div>
   </div>
 <%= render "shared/footer" %>
