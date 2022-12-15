@@ -20,7 +20,7 @@ class CreatorsController < ApplicationController
   end
 
   def show
-    @records = @creator.records.page(params[:page]).per(20).order("created_at DESC")
+    @records = @creator.records.page(params[:page]).per(20).order('created_at DESC')
   end
 
   def edit

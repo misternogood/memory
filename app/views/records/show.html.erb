@@ -19,6 +19,10 @@
       <span><%= @record.content %></span>
     </div>
     <div class='created-body'>
+      <div class='created-title'>タグ</div>
+      <div class='created-date'><%= @record.tags.first&.tag_name %></div>
+    </div>
+    <div class='created-body'>
       <div class='created-title'>作成日</div>
       <div class='created-date'><%= @record.created_date %></div>
     </div>
