@@ -29,18 +29,27 @@ http://35.75.212.47/
 https://docs.google.com/spreadsheets/d/1g3lLsvjfr14fOch5KpCLf-D4dDqmhtTz8PtBp0vPQBA/edit#gid=1020327293
 # 実装した機能についての画像
 ・マイページ
-[![Image from Gyazo](https://i.gyazo.com/4ab653ab607d75d3fbbd0d200d8b2839.png)](https://gyazo.com/4ab653ab607d75d3fbbd0d200d8b2839)
+[![Image from Gyazo](https://i.gyazo.com/0a6db9a083068dfe0aaa42e181b97757.png)](https://gyazo.com/0a6db9a083068dfe0aaa42e181b97757)
 
-・新規投稿
-[![Image from Gyazo](https://i.gyazo.com/3a099d6ecbd82c74e6a67c17188f1312.gif)](https://gyazo.com/3a099d6ecbd82c74e6a67c17188f1312)
+・作者登録
+[![Image from Gyazo](https://i.gyazo.com/b3491efe605d8c1da6053b1605d5e879.gif)](https://gyazo.com/b3491efe605d8c1da6053b1605d5e879)
 
 ・投稿一覧
 [![Image from Gyazo](https://i.gyazo.com/2f6c33ae310a59d97b8b517d26cb5869.png)](https://gyazo.com/2f6c33ae310a59d97b8b517d26cb5869)
-・投稿詳細ページ
-[![Image from Gyazo](https://i.gyazo.com/6e640812550da063cc2ce25426b80629.jpg)](https://gyazo.com/6e640812550da063cc2ce25426b80629)
+
+・新規投稿
+[![Image from Gyazo](https://i.gyazo.com/c0cd3904d268ddc5c453e466867dbe6a.gif)](https://gyazo.com/c0cd3904d268ddc5c453e466867dbe6a)
+
+・投稿詳細ページ(お気に入り機能)
+[![Image from Gyazo](https://i.gyazo.com/a41000c312a312c1d668c06aeda80973.gif)](https://gyazo.com/a41000c312a312c1d668c06aeda80973)
+
+・お気に入り一覧
+[![Image from Gyazo](https://i.gyazo.com/bf0f27ceb7d00890532441ee07461238.gif)](https://gyazo.com/bf0f27ceb7d00890532441ee07461238)
+
 # 実装予定の機能
-・お気に入り機能
-・画像のプレビュー機能
+・検索機能
+・パンくずリスト
+・自身が許可したユーザーにだけ閲覧権限を与える
 # ER図
 [![Image from Gyazo](https://i.gyazo.com/af053b74d01079f2ebfe4904377f87eb.png)](https://gyazo.com/af053b74d01079f2ebfe4904377f87eb)
 # 開発環境
@@ -72,6 +81,7 @@ https://docs.google.com/spreadsheets/d/1g3lLsvjfr14fOch5KpCLf-D4dDqmhtTz8PtBp0vP
 ### Association
 
 - has_many :creators
+- has_many :favorites, dependent: :destroy
 
 ## creators テーブル
 
@@ -79,12 +89,13 @@ https://docs.google.com/spreadsheets/d/1g3lLsvjfr14fOch5KpCLf-D4dDqmhtTz8PtBp0vP
 | ---------------------- | ------------ | ------------------------------ |
 | name                   | string       | null: false                    |
 | birth_date             | date         | null: false                    |
-| user                   | references   | null: false,foreign_key: true  |
+| user_id                | references   | null: false,foreign_key: true  |
 
 ### Association
 
 - belongs_to :user
-- has_many :records
+- has_many :records, dependent: :destroy
+- has_one_attached :image
 
 ## records テーブル
 
@@ -92,8 +103,48 @@ https://docs.google.com/spreadsheets/d/1g3lLsvjfr14fOch5KpCLf-D4dDqmhtTz8PtBp0vP
 | ---------------------- | ------------ | ------------------------------ |
 | title                  | string       | null: false                    |
 | content                | text         | null: false                    |
-| creator                | references   | null: false,foreign_key: true  |
+| creator_id             | references   | null: false,foreign_key: true  |
+| created_date           | date         | null: false                    |
 
 ### Association
 
 - belongs_to :creator
+- has_one_attached :image
+- has_many :record_tag_relations, dependent: :destroy
+- has_many :tags, through: :record_tag_relations
+- has_many :favorites, dependent: :destroy
+
+## favorites テーブル
+
+| Column                 | Type         | Options                        |
+| ---------------------- | ------------ | ------------------------------ |
+| user_id                | integer      |                                |
+| record_id              | integer      |                                |
+
+### Association
+
+- belongs_to :user
+- belongs_to :record
+
+## tags テーブル
+
+| Column                 | Type         | Options                        |
+| ---------------------- | ------------ | ------------------------------ |
+| tag_name               | string       | uniqueness: true               |
+
+### Association
+
+- has_many :record_tag_relations, dependent: :destroy
+- has_many :records, through: :record_tag_relations
+
+## record_tag_relations テーブル
+
+| Column                 | Type         | Options                        |
+| ---------------------- | ------------ | ------------------------------ |
+| record_id              | references   | null: false,foreign_key: true  |
+| tag_id                 | references   | null: false,foreign_key: true  |
+
+### Association
+
+- belongs_to :record
+- belongs_to :tag
